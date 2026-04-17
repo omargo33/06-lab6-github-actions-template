@@ -40,6 +40,9 @@ jobs:
         run: |
           .venv/bin/python -m pytest -q --cov=prediction_pipeline_demo --cov-report=term-missing --cov-fail-under=70
       
-      # TODO: Add a step here to run the demo pipeline end-to-end
-      # The goal is to execute prediction_pipeline_demo.py so CI logs show the model’s R^2 score.
-
+      ## Ejecuto el pipeline de demostración para asegurarme de que funciona correctamente
+      ## Personalice para usar .venv/bin/python
+      - name: Run ML demo pipeline
+        run: |
+          echo "Running prediction pipeline..."
+          .venv/bin/python prediction_pipeline_demo.py
