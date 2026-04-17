@@ -33,3 +33,11 @@ TOTAL                            25      6      2      1    74%
 
 
 ## Entregable 3
+
+Para ejecutar el runner local hay que poner los siguientes pasos:
+
+
+cd /home/ovelez/Documentos/cursos/Maestria/Produccion/06-actions-runner/
+./run.sh
+
+Y volver a ejecutar desde los pipelines de github actions para ver los resultados en el runner local.
