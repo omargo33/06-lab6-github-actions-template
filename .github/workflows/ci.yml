@@ -26,16 +26,19 @@ jobs:
       #  with:
       #    python-version: "3.11"
 
+      - name: Create virtual environment
+        run: python3 -m venv .venv
+
       - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install -r requirements.txt
+          .venv/bin/python -m pip install --upgrade pip
+          .venv/bin/python -m pip install -r requirements.txt
 
       - name: Run tests with coverage
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
-          python3 -m pytest -q --cov=prediction_pipeline_demo --cov-report=term-missing --cov-fail-under=70
+          .venv/bin/python -m pytest -q --cov=prediction_pipeline_demo --cov-report=term-missing --cov-fail-under=70
       
       # TODO: Add a step here to run the demo pipeline end-to-end
       # The goal is to execute prediction_pipeline_demo.py so CI logs show the model’s R^2 score.
