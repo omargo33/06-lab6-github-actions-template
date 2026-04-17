@@ -44,5 +44,5 @@ jobs:
       ## Personalice para usar .venv/bin/python
       - name: Run ML demo pipeline
         run: |
-          echo "Running prediction pipeline..."
+          echo "Running prediction pipeline... pero uso .venv/bin/python :) "
           .venv/bin/python prediction_pipeline_demo.py
