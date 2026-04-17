@@ -14,7 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Show Python
+        run: python3 --version
+      # - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -32,3 +34,7 @@ jobs:
       
       # TODO: Add a step here to run the demo pipeline end-to-end
       # The goal is to execute prediction_pipeline_demo.py so CI logs show the model’s R^2 score.
+
+jobs:
+  build:
+    runs-on: self-hosted  # ← Cambia de ubuntu-latest a self-hosted
